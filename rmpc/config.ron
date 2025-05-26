@@ -3,7 +3,7 @@
 #![enable(unwrap_newtypes)]
 #![enable(unwrap_variant_newtypes)]
 (
-    address: "10.0.0.8:7000",
+    address: "127.0.0.1:7000",
     password: None,
     theme: Some("pinky"),
     cache_dir: None,
@@ -86,7 +86,7 @@
             "<C-c>":     Close,
             "<Esc>":     Close,
             "K":         MoveUp,
-            "<A-D>":         Delete,
+            "<A-D>":     Delete,
         },
         queue: {
             "D":       DeleteAll,

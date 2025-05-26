@@ -156,6 +156,8 @@ bindsym $mod+Shift+0 move container to workspace number $ws0
 # Workspace switching shortcuts :3
 bindsym --whole-window $mod+button9 workspace next
 bindsym --whole-window $mod+button8 workspace prev
+bindsym --whole-window $mod+Shift+button9 move container to workspace next
+bindsym --whole-window $mod+Shift+button8 move container to workspace prev
 bindsym --whole-window $mod+button2 workspace back_and_forth
 bindsym --whole-window $mod+Tab workspace back_and_forth
 
@@ -269,6 +271,7 @@ set $KP_0 90
 
 # Rmpc keybinds (HOLY FUCKING JANK LMAO)
 
+exec_always mpd
 bindsym Ctrl+Mod1+r exec --no-startup-id kitty -e rmpc
 
 bindcode Mod1+$KP_1 exec kitty --start-as hidden -e rmpc togglepause && q
