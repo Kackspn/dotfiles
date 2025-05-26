@@ -1,0 +1,10 @@
+/*
+mpd/playlists
+!.gitignore
+!mpd
+!kitty
+!rmpc
+!i3
+!nvim
+!.zshrc
+!.p10k.zsh
