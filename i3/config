@@ -219,6 +219,7 @@ bindsym Ctrl+Shift+Mod1+s exec shutdown now
 
 # Set app shortcuts
 
+bindsym $mod+Shift+Return exec --no-startup-id exo-open --launch WebBrowser 
 bindsym Ctrl+Mod1+s exec --no-startup-id steam
 bindsym Ctrl+Mod1+f exec --no-startup-id thunar
 bindsym Ctrl+Shift+Mod1+l exec --no-startup-id lutris
@@ -271,7 +272,7 @@ set $KP_0 90
 # Rmpc keybinds (HOLY FUCKING JANK LMAO)
 
 exec_always mpd
-bindsym Ctrl+Mod1+a exec --no-startup-id kitty -e rmpc
+bindsym Ctrl+Mod1+a exec kitty -e rmpc
 
 bindcode Mod1+$KP_1 exec kitty --start-as hidden -e rmpc togglepause && q
 bindcode Mod1+$KP_2 exec kitty --start-as hidden -e rmpc prev && q
