@@ -24,15 +24,19 @@ if ! rmpc albumart --output "$ALBUM_ART_PATH"; then
     ALBUM_ART_PATH="${DEFAULT_ALBUM_ART_PATH}"
 fi
 
-if [ -n "$TITLE" ]; then # Only if TITLE is not empty
-    title_length=${#TITLE} # Get the length of the title
-    # Generate a string of hyphens of the same length as the title
-    # Using printf for this is efficient:
-    title_underline=$(printf '%.0s-' $(seq 1 $title_length))
-else
-    title_underline="" # No underline if there's no title
-fi
+# Resize
+convert "$ALBUM_ART_PATH" -resize 64x64 "$ALBUM_ART_PATH"
 
-NOTIFICATION_BODY="$ARTIST\n$title_underline\n$TITLE"
+# if [ -n "$TITLE" ]; then # Only if TITLE is not empty
+#     title_length=${#TITLE} # Get the length of the title
+#     # Generate a string of hyphens of the same length as the title
+#     # Using printf for this is efficient:
+#     title_underline=$(printf '%.0s-' $(seq 1 $title_length))
+# else
+#     title_underline="" # No underline if there's no title
+# fi
+
+NOTIFICATION_BODY="$ARTIST\n-----------------\n$TITLE"
 # Send the notification
 notify-send -i "${ALBUM_ART_PATH}" "Now Playing" "$NOTIFICATION_BODY"
+rm -rf "$TMP_DIR"

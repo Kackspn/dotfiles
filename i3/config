@@ -240,8 +240,8 @@ bindsym Ctrl+Mod1+0 exec --no-startup-id xinput --disable 21
 bindsym Ctrl+Mod1+1 exec --no-startup-id xinput --enable 21
 
 ## Clipboard Screenshots
-bindsym Mod1+Home exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png && notify-send "Window copied to clipboard"
-bindsym Ctrl+Home exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+Home exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png && notify-send "Window copied to clipboard"
+bindsym Mod1+Home exec --no-startup-id maim | xclip -selection clipboard -t image/png && notify-send "Screen copied to clipboard"
 bindsym Ctrl+Shift+Home exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 # Brightness
