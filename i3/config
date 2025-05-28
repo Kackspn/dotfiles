@@ -208,9 +208,16 @@ bindsym $mod+r mode "resize"
 # }
 
 
-# Set wallpaper
+# AUtostart programs
 
+# Wallpaper
 exec_always feh --bg-fill /home/jackson/Pictures/kos.png
+# Top status bar
+exec_always ~/.config/polybar/polybar.sh &
+# Music Player Daemon
+exec_always mpd
+# Notifications
+exec_always dunst
 
 # Set restart and shutdown shortcuts
 
@@ -233,7 +240,7 @@ bindsym Ctrl+Mod1+0 exec --no-startup-id xinput --disable 21
 bindsym Ctrl+Mod1+1 exec --no-startup-id xinput --enable 21
 
 ## Clipboard Screenshots
-bindsym Mod1+Home exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Mod1+Home exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png && notify-send "Window copied to clipboard"
 bindsym Ctrl+Home exec --no-startup-id maim | xclip -selection clipboard -t image/png
 bindsym Ctrl+Shift+Home exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
@@ -256,7 +263,6 @@ gaps top 10px
 gaps horizontal 10px
 
  # Polybar
-exec_always ~/.config/polybar/polybar.sh &
 
 set $KP_1 87
 set $KP_2 88
@@ -271,7 +277,6 @@ set $KP_0 90
 
 # Rmpc keybinds (HOLY FUCKING JANK LMAO)
 
-exec_always mpd
 bindsym Ctrl+Mod1+a exec kitty -e rmpc
 
 bindcode Mod1+$KP_1 exec kitty --start-as hidden -e rmpc togglepause && q
@@ -279,3 +284,7 @@ bindcode Mod1+$KP_2 exec kitty --start-as hidden -e rmpc prev && q
 bindcode Mod1+$KP_3 exec kitty --start-as hidden -e rmpc next && q
 bindcode Mod1+$KP_7 exec kitty --start-as hidden -e rmpc volume +2 && q
 bindcode Mod1+$KP_4 exec kitty --start-as hidden -e rmpc volume -2 && q
+
+
+# Dunst
+bindsym $mod+v exec pkill dunst&&notify-send Test " jjj jJ TTest Test Test Test Test Test Test Test Test Test Test Test Test est notification"

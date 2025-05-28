@@ -7,7 +7,7 @@
     password: None,
     theme: Some("pinky"),
     cache_dir: None,
-    on_song_change: None,
+    on_song_change: ["/home/jackson/.config/rmpc/notify"],
     volume_step: 2,
     max_fps: 30,
     scrolloff: 0,
