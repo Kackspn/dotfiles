@@ -63,6 +63,7 @@ setopt hist_verify            # show command with history expansion to user befo
 #setopt share_history         # share command history data
 
 # force zsh to show the complete history
+alias gs="git status"
 alias kittyup="curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin"
 alias history="history 0"
 alias mc="cd ~/Desktop/Minecraft/ && ./ServerStart.sh"
@@ -320,4 +321,5 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 # Created by `pipx` on 2024-08-15 01:46:13
 export PATH="$PATH:/home/jackson/.local/bin"
 export PATH="$PATH:/home/jackson/.cargo/bin"
-
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
