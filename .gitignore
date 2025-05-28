@@ -1,6 +1,7 @@
 /*
 mpd/playlists
 rmpc/tmp
+!polybar
 !sub
 !.gitignore
 !mpd
