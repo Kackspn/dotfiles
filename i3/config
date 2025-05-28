@@ -284,7 +284,6 @@ bindcode Mod1+$KP_2 exec kitty --start-as hidden -e rmpc prev && q
 bindcode Mod1+$KP_3 exec kitty --start-as hidden -e rmpc next && q
 bindcode Mod1+$KP_7 exec kitty --start-as hidden -e rmpc volume +2 && q
 bindcode Mod1+$KP_4 exec kitty --start-as hidden -e rmpc volume -2 && q
+bindcode Mod1+$KP_5 exec ~/.config/rmpc/notify 
 
 
-# Dunst
-bindsym $mod+v exec pkill dunst&&notify-send Test " jjj jJ TTest Test Test Test Test Test Test Test Test Test Test Test Test est notification"
