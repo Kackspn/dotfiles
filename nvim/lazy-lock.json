@@ -30,5 +30,6 @@
   "telescope.nvim": { "branch": "master", "commit": "6312868392331c9c0f22725041f1ec2bef57c751" },
   "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "cec1cee1e25bbb2cbc588d40a460953012595479" },
   "trouble.nvim": { "branch": "main", "commit": "46cf952fc115f4c2b98d4e208ed1e2dce08c9bf6" },
+  "url-open": { "branch": "main", "commit": "9f8f4a56ac709f26aa17d8ef921b272bf2262a30" },
   "vim-highlightedyank": { "branch": "master", "commit": "afb0f262b490706c23e94012c2ab9fa67c0481ce" }
 }
