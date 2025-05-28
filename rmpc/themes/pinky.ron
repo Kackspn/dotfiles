@@ -71,16 +71,16 @@
                 size: "2",
             ),
             (
+                pane: Pane(ProgressBar),
+                size: "1",
+            ),
+            (
                 pane: Pane(Tabs),
                 size: "3",
             ),
             (
                 pane: Pane(TabContent),
                 size: "100%",
-            ),
-            (
-                pane: Pane(ProgressBar),
-                size: "1",
             ),
         ],
     ),
