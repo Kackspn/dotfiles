@@ -10,6 +10,8 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $rmpc ~/.cargo/bin/rmpc
+set $notify ~/.config/rmpc/notify
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -34,6 +36,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 exec --no-startup-id xinput --disable 21 
+exec --no-startup-id lxpolkit 
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -239,6 +242,13 @@ bindsym Ctrl+Mod1+0 exec --no-startup-id xinput --disable 21
 # Enable touchpad
 bindsym Ctrl+Mod1+1 exec --no-startup-id xinput --enable 21
 
+
+# Assign windows to workspace
+assign [class="zen"] $ws2
+assign [class="Lutris"] $ws1
+assign [class="overwatch.exe"] $ws1
+assign [class="vesktop"] $ws2
+
 ## Clipboard Screenshots
 bindsym Ctrl+Home exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png && notify-send "Window copied to clipboard"
 bindsym Mod1+Home exec --no-startup-id maim | xclip -selection clipboard -t image/png && notify-send "Screen copied to clipboard"
@@ -262,8 +272,7 @@ gaps inner 5px
 gaps top 10px
 gaps horizontal 10px
 
- # Polybar
-
+# Numpad bindings
 set $KP_1 87
 set $KP_2 88
 set $KP_3 89
@@ -275,15 +284,15 @@ set $KP_8 80
 set $KP_9 81
 set $KP_0 90
 
-# Rmpc keybinds (HOLY FUCKING JANK LMAO)
+# Rmpc keybinds
 
-bindsym Ctrl+Mod1+a exec kitty -e rmpc
+# bindsym Ctrl+Mod1+a exec kitty -e rmpc
+bindsym Ctrl+Mod1+a workspace $ws3 ; exec kitty -e rmpc
 
-bindcode Mod1+$KP_1 exec kitty --start-as hidden -e rmpc togglepause && q
-bindcode Mod1+$KP_2 exec kitty --start-as hidden -e rmpc prev && q
-bindcode Mod1+$KP_3 exec kitty --start-as hidden -e rmpc next && q
-bindcode Mod1+$KP_7 exec kitty --start-as hidden -e rmpc volume +2 && q
-bindcode Mod1+$KP_4 exec kitty --start-as hidden -e rmpc volume -2 && q
-bindcode Mod1+$KP_5 exec ~/.config/rmpc/notify 
-
-
+bindcode Mod1+$KP_1 exec $rmpc togglepause 
+bindcode Mod1+$KP_2 exec $rmpc prev
+bindcode Mod1+$KP_3 exec $rmpc next
+bindcode Mod1+$KP_5 exec $notify
+bindcode Mod1+$KP_7 exec $rmpc volume +2 
+bindcode Mod1+$KP_4 exec $rmpc volume -2 
+bindcode Mod1+$KP_8 exec ~/.config/rmpc/volume.sh

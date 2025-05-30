@@ -31,6 +31,8 @@
             ",":       VolumeDown,
             "s":       Stop,
             ".":       VolumeUp,
+            "L":       NextTab,
+            "H":       PreviousTab,
             "<Tab>":   NextTab,
             "<S-Tab>": PreviousTab,
             "1":       SwitchToTab("Now Playing"),
@@ -121,7 +123,7 @@
             name: "Now Playing",
             pane: Split(
                 direction: Horizontal,
-                panes: [(size: "40%", pane: Pane(AlbumArt)), (size: "60%", pane: Pane(Queue))],
+                panes: [(size: "20%", pane: Pane(AlbumArt)), (size: "80%", pane: Pane(Queue))],
             ),
         ),
         (
