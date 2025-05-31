@@ -37,6 +37,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id xinput --disable 21 
 exec --no-startup-id lxpolkit 
+exec_always --no-startup-id xfce4-power-manager
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -256,11 +257,11 @@ bindsym Ctrl+Shift+Home exec --no-startup-id maim --select | xclip -selection cl
 
 # Brightness
 bindsym Ctrl+Shift+Mod1+q exec /home/jackson/MyScripts/blank
-bindsym --release Mod1+F3 exec xdotool key XF86MonBrightnessDown                                     
-bindsym --release Mod1+F4 exec xdotool key XF86MonBrightnessUp
+# bindsym --release Mod1+F3 exec xdotool key XF86MonBrightnessDown                                     
+# bindsym --release Mod1+F4 exec xdotool key XF86MonBrightnessUp
+bindsym Mod1+F3 exec ~/.config/backlight/dec.sh
+bindsym Mod1+F4 exec ~/.config/backlight/inc.sh
 
-# Notifications WAIT FOR 4.24
-# popup_during_fullscreen all
 
 # Colors            border  backgr. text    indicator child_border
 
